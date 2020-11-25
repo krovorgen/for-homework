@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/krovorgen/for-homework/issues"
   },
-  "homepage": "https://github.com/krovorgen/for-homework#readme"
+  "homepage": "https://github.com/krovorgen/for-homework#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3"
+  }
 }
