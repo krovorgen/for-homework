@@ -1,16 +1,23 @@
-export function textParagraph() {
-  document.getElementById("buttonMe").onclick = () => {
-    const input = window.prompt("Enter a text: ");
-    const el = document.getElementById("buttonMe");
-    if (!input) {
-      el.hidden = true;
-    }
-    const messageEl = document.createElement("p");
-    messageEl.innerText = input;
-    const messageBox = document.querySelector("#addElements");
-    messageBox.append(messageEl);
-    if (messageBox.childNodes.length > 6) {
-      messageBox.childNodes[1].remove();
-    }
-  };
-}
+const shadowButton = () => {
+  const button = document.querySelector(".button");
+  const input = document.querySelector(".input");
+  button.hidden = true;
+  input.addEventListener("input", function shadow() {
+    button.hidden = !this.value.length;
+  });
+};
+shadowButton();
+document.querySelector(".button").onclick = () => {
+  shadowButton();
+  const input = document.querySelector(".input");
+  const paragraph = document.createElement("p");
+  paragraph.innerText = input.value;
+  const div = document.querySelector(".divshadow");
+  div.append(paragraph);
+  const ps = div.querySelectorAll("p");
+  input.value = "";
+  if (ps.length > 5) {
+    ps[0].remove();
+  }
+  shadowButton();
+};
