@@ -6,10 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="divshadow">
-      <input class="input" type="text" />
-      <button class="button">Click</button>
-    </div>
-    <script src="./js/hw7.js"></script>
+    <div class="divshadow"></div>
+    <script type="module">
+      import { addForm } from "./js/hw7.js";
+      addForm(document.querySelector(".divshadow"));
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@ describe("Checking a triangle ", () => {
 });
 describe("Checking a square circle ", () => {
   test("The right sides", () => {
-    console.log = jest.fn();
+    jest.spyOn(console, "log");
     circle(39);
     expect(console.log).toBeCalledWith(245, 4778);
   });
@@ -17,7 +17,7 @@ describe("Checking a square circle ", () => {
 describe("Checking for the roots of an equation", () => {
   test("No roots", () => {
     expect(quadraticRoots(5, 4, 3)).toBe("Корней нет");
-    console.log = jest.fn();
+    jest.spyOn(console, "log");
     quadraticRoots(2, -5, 3);
     expect(console.log).toBeCalledWith(1.5, 1);
     expect(quadraticRoots(4, -4, 1)).toBe(0.5);

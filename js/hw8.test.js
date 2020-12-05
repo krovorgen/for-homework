@@ -2,7 +2,7 @@ import { dayOfWeek, totalMinutes } from "./hw8";
 
 describe("test date of week", () => {
   test("Check my birthday", () => {
-    window.prompt = jest.fn().mockImplementation(() => "17.01.1998");
+    jest.spyOn(global.window, "prompt").mockImplementation(() => "17.01.1998");
     expect(dayOfWeek()).toBe("Суб");
   });
 });
