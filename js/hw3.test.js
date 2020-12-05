@@ -2,26 +2,27 @@ import { sumNumber, multiplicationTable7, average } from "./hw3";
 
 describe("To check the amount", () => {
   test("Test for the amount", () => {
-    console.log = jest.fn();
+    jest.spyOn(console, "log");
     sumNumber();
-    expect(console.log).toHaveBeenCalledWith(3825);
+    expect(console.log).toBeCalledWith(3825);
   });
 });
 
 describe("Multiplication table", () => {
   test("for 7", () => {
-    console.log = jest.fn();
+    jest.spyOn(console, "log");
     multiplicationTable7();
-    expect(console.log).toHaveBeenCalledWith("7 x 1 = 7");
-    expect(console.log).toHaveBeenLastCalledWith("7 x 9 = 63");
+    expect(console.log).toBeCalledWith("7 x 1 = 7");
+    expect(console.log).lastCalledWith("7 x 9 = 63");
+    expect(console.log).toBeCalledTimes(9);
   });
 });
 
 describe("Arithmetic mean from and to", () => {
   [["1 to 5", 5, 3]].forEach((tests) => {
     test(tests[0], () => {
-      window.prompt = jest.fn().mockImplementation(() => tests[1]);
-      console.log = jest.fn();
+      jest.spyOn(global.window, "prompt").mockImplementation(() => tests[1]);
+      jest.spyOn(console, "log");
       average();
       expect(console.log).toHaveBeenCalledWith(tests[2]);
     });

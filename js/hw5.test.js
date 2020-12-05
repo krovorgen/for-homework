@@ -42,18 +42,18 @@ describe("Check for multiplication of array elements", () => {
       -20,
     ]);
   });
-  describe("Checking for the largest and smallest array element", () => {
-    test("Positive", () => {
-      const listNumbersPositive = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-      console.log = jest.fn();
-      minAndMaxElementArray(listNumbersPositive);
-      expect(console.log).toBeCalledWith(1, 10);
-    });
-    test("Negative", () => {
-      const listNumbersNegative = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10];
-      console.log = jest.fn();
-      minAndMaxElementArray(listNumbersNegative);
-      expect(console.log).toBeCalledWith(-10, -1);
-    });
+});
+describe("Checking for the largest and smallest array element", () => {
+  test("Positive", () => {
+    const listNumbersPositive = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    jest.spyOn(console, "log");
+    minAndMaxElementArray(listNumbersPositive);
+    expect(console.log).toBeCalledWith(1, 10);
+  });
+  test("Negative", () => {
+    const listNumbersNegative = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10];
+    jest.spyOn(console, "log");
+    minAndMaxElementArray(listNumbersNegative);
+    expect(console.log).toBeCalledWith(-10, -1);
   });
 });

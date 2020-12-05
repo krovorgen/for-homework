@@ -1,19 +1,14 @@
-export function addingAge() {
+export const addingAge = () => {
   const user = {
     name: "John",
     age: prompt("Enter a number: "),
   };
   return user;
-}
+};
 
-export function adminAddRole() {
-  const admin = { ...addingAge(), role: "admin" };
-  return admin;
-}
+export const adminAddRole = () => ({ ...addingAge(), role: "admin" });
 
-export function creatingVariable() {
+export const creatingVariable = () => {
   const { name, age, role } = adminAddRole();
-  console.log(name);
-  console.log(age);
-  console.log(role);
-}
+  console.log(name, age, role);
+};

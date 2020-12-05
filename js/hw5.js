@@ -1,17 +1,10 @@
-export function sumArray(listNumbers) {
-  let sum = 0;
-  listNumbers.forEach((el) => {
-    sum += el;
-  });
-  return sum;
-}
+export const sumArray = (listNumbers) =>
+  listNumbers.reduce((sumDigits, current) => sumDigits + Number(current), 0);
 
-export function twiceArray(listNumbers) {
+export const twiceArray = (listNumbers) => {
   return listNumbers.map((x) => x * 2);
-}
+};
 
-export function minAndMaxElementArray(listnumbers) {
-  const minNumber = Math.min.apply(null, listnumbers);
-  const maxNumber = Math.max.apply(null, listnumbers);
-  console.log(minNumber, maxNumber);
-}
+export const minAndMaxElementArray = (listnumbers) => {
+  console.log(Math.min(...listnumbers), Math.max(...listnumbers));
+};

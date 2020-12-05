@@ -1,5 +1,4 @@
-export const sum = (a, b) => a + b;
-export const mul = (a, b) => a * b;
+export const sumMul = (a, b) => console.log(a + b, a * b);
 
 export const sumString = (str, str1) => str.length + str1.length;
 

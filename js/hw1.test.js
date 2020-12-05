@@ -1,15 +1,11 @@
-import { sum, mul, sumString, sumDigit } from "./hw1";
+import { sumMul, sumString, sumDigit } from "./hw1";
 
 describe("Multiplication and Sum Test", () => {
-  test("Sum of numbers", () => {
-    expect(sum(1, 2)).toBe(3);
-    expect(sum(-1, -2)).toBe(-3);
-    expect(sum(1, -2)).toBe(-1);
-  });
-  test("Multiplication of numbers", () => {
-    expect(mul(1, 2)).toBe(2);
-    expect(mul(-1, -2)).toBe(2);
-    expect(mul(1, -2)).toBe(-2);
+  test("Sum and mul numbers", () => {
+    jest.spyOn(console, "log");
+    sumMul(1, 2);
+    expect(console.log).toBeCalled();
+    expect(console.log).toBeCalledWith(3, 2);
   });
 });
 
