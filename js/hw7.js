@@ -5,11 +5,11 @@ export function addForm(el) {
   button.className = "button";
   input.className = "input";
   button.innerText = "Click";
+  /* button.setAttribute('hidden', true); */
   button.hidden = true;
 
   input.addEventListener("input", function shadow() {
-    console.log("1");
-    button.hidden = false;
+    button.hidden = !this.value.length;
   });
 
   button.addEventListener("click", () => {
@@ -18,6 +18,7 @@ export function addForm(el) {
     el.append(p);
     input.value = "";
     button.hidden = true;
+    /* button.setAttribute('hidden', true) */
     if (el.querySelectorAll("p").length > 5) {
       el.querySelectorAll("p")[0].remove();
     }
